@@ -26,8 +26,9 @@ jobs:
 
       - name: Extract app source
         run: |
-          unzip -q shop_app.zip
-          mv shop_app app
+          mkdir -p extracted
+          unzip -q shop_app.zip -d extracted
+          mv extracted/shop_app app
           ls -la app
 
       - name: Add Android platform files
